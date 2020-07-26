@@ -9,10 +9,10 @@ a ton of noise to plugin developers.
 These do not help plugin developers if they bring moise noise than value.
 
 diff --git a/src/main/java/org/bukkit/Bukkit.java b/src/main/java/org/bukkit/Bukkit.java
-index e83f0852d187524a0068a81875323b01e3fd5cbd..6658c12b87472a7fa58a6ca70ab0189083e75242 100644
+index c6834080859051bdd0f33f2c9e9a8e48d7dbd31b..6b3af64ecd0b96b995f54389b15fc995f2cf78f1 100644
 --- a/src/main/java/org/bukkit/Bukkit.java
 +++ b/src/main/java/org/bukkit/Bukkit.java
-@@ -1211,7 +1211,7 @@ public final class Bukkit {
+@@ -1254,7 +1254,7 @@ public final class Bukkit {
       *
       * @return the scoreboard manager or null if no worlds are loaded.
       */
@@ -21,7 +21,7 @@ index e83f0852d187524a0068a81875323b01e3fd5cbd..6658c12b87472a7fa58a6ca70ab01890
      public static ScoreboardManager getScoreboardManager() {
          return server.getScoreboardManager();
      }
-@@ -1508,7 +1508,7 @@ public final class Bukkit {
+@@ -1551,7 +1551,7 @@ public final class Bukkit {
       * @param clazz the class of the tag entries
       * @return the tag or null
       */
@@ -31,7 +31,7 @@ index e83f0852d187524a0068a81875323b01e3fd5cbd..6658c12b87472a7fa58a6ca70ab01890
          return server.getTag(registry, tag, clazz);
      }
 diff --git a/src/main/java/org/bukkit/Location.java b/src/main/java/org/bukkit/Location.java
-index 6e1a1124a6e528c1a94ccb1d09bc5dccf056b0b8..77d9cd0a1f54b5eb233eddbcff1bfa76bc182e9a 100644
+index 9c91c49ed7302c12fcb1d8e9bc58712efc199954..d5d67b3d84cd88ed0f858497e68535ec0162c700 100644
 --- a/src/main/java/org/bukkit/Location.java
 +++ b/src/main/java/org/bukkit/Location.java
 @@ -46,7 +46,7 @@ public class Location implements Cloneable, ConfigurationSerializable {
@@ -62,10 +62,10 @@ index 6e1a1124a6e528c1a94ccb1d09bc5dccf056b0b8..77d9cd0a1f54b5eb233eddbcff1bfa76
          if (this.world == null) {
              return null;
 diff --git a/src/main/java/org/bukkit/Server.java b/src/main/java/org/bukkit/Server.java
-index fa855cacec894a0efb254e8a9729a9787464f17d..df37b9ee57ff8cd194401719bc48f868d6b1ee7e 100644
+index 47e6a3f2bd41a9a01ec74e4c3f4919098ba88614..670c02976500fa2953f05027ec7c895b75fe7225 100644
 --- a/src/main/java/org/bukkit/Server.java
 +++ b/src/main/java/org/bukkit/Server.java
-@@ -1014,7 +1014,7 @@ public interface Server extends PluginMessageRecipient {
+@@ -1051,7 +1051,7 @@ public interface Server extends PluginMessageRecipient {
       *
       * @return the scoreboard manager or null if no worlds are loaded.
       */
@@ -74,7 +74,7 @@ index fa855cacec894a0efb254e8a9729a9787464f17d..df37b9ee57ff8cd194401719bc48f868
      ScoreboardManager getScoreboardManager();
  
      /**
-@@ -1284,7 +1284,7 @@ public interface Server extends PluginMessageRecipient {
+@@ -1321,7 +1321,7 @@ public interface Server extends PluginMessageRecipient {
       * @param clazz the class of the tag entries
       * @return the tag or null
       */

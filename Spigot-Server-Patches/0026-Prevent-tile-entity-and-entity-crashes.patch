@@ -5,7 +5,7 @@ Subject: [PATCH] Prevent tile entity and entity crashes
 
 
 diff --git a/src/main/java/net/minecraft/server/TileEntity.java b/src/main/java/net/minecraft/server/TileEntity.java
-index fa6400dccd4df635d696e0858c0c164a0f19b4a4..e2f3cec7420edbd284b531ca7d1d121459fc098c 100644
+index 057d703fe73de9bb9ca6f0e263463d32abae4c13..534295965ee701611b5e12a10f14a69e8226376a 100644
 --- a/src/main/java/net/minecraft/server/TileEntity.java
 +++ b/src/main/java/net/minecraft/server/TileEntity.java
 @@ -194,7 +194,12 @@ public abstract class TileEntity implements KeyedObject { // Paper
@@ -23,10 +23,10 @@ index fa6400dccd4df635d696e0858c0c164a0f19b4a4..e2f3cec7420edbd284b531ca7d1d1214
          }
      }
 diff --git a/src/main/java/net/minecraft/server/World.java b/src/main/java/net/minecraft/server/World.java
-index 0332aca8be854fca7444308b9ab5e43f01f8055e..1bb36201544987cf44b9da2494e4cc54385f7e77 100644
+index e5e4d25ffc8f640a183b53961ce4678e52a67a91..8e122f3e28dd1ec2e27faa663adcbc900f0e105e 100644
 --- a/src/main/java/net/minecraft/server/World.java
 +++ b/src/main/java/net/minecraft/server/World.java
-@@ -664,11 +664,13 @@ public abstract class World implements GeneratorAccess, AutoCloseable {
+@@ -720,11 +720,13 @@ public abstract class World implements GeneratorAccess, AutoCloseable {
  
                          gameprofilerfiller.exit();
                      } catch (Throwable throwable) {
@@ -45,7 +45,7 @@ index 0332aca8be854fca7444308b9ab5e43f01f8055e..1bb36201544987cf44b9da2494e4cc54
                      }
                      // Spigot start
                      finally {
-@@ -734,11 +736,12 @@ public abstract class World implements GeneratorAccess, AutoCloseable {
+@@ -790,11 +792,12 @@ public abstract class World implements GeneratorAccess, AutoCloseable {
          try {
              consumer.accept(entity);
          } catch (Throwable throwable) {
